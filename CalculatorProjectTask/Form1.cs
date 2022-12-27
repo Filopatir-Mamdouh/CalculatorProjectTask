@@ -70,6 +70,9 @@ namespace CalculatorProjectTask
                     rst = rst * double.Parse(textBox1.Text);
                     textBox1.Text = rst.ToString();
                     break;
+                default:
+                    textBox1.Text = "0";
+                    break;
             }
         }
     }
