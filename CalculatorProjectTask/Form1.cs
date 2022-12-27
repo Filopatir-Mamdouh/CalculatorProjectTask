@@ -91,5 +91,13 @@ namespace CalculatorProjectTask
         {
             equalfn();   
         }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            string op = "";
+            double rst = 0;
+            int isop = 0;
+            textBox1.Text = "0";
+        }
     }
 }
