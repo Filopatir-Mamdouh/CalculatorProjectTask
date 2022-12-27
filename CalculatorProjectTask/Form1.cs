@@ -18,21 +18,25 @@ namespace CalculatorProjectTask
                 case "+":
                     rst = rst + double.Parse(textBox1.Text);
                     textBox1.Text = rst.ToString();
+                    rst = 0;
                     op = "";
                     break;
                 case "-":
                     rst = rst - double.Parse(textBox1.Text);
                     textBox1.Text = rst.ToString();
+                    rst = 0;
                     op = "";
                     break;
                 case "÷":
                     rst = rst / double.Parse(textBox1.Text);
                     textBox1.Text = rst.ToString();
+                    rst = 0;
                     op = "";
                     break;
                 case "×":
                     rst = rst * double.Parse(textBox1.Text);
                     textBox1.Text = rst.ToString();
+                    rst = 0;
                     op = "";
                     break;
                 default:
