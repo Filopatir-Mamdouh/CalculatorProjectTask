@@ -90,6 +90,7 @@
             this.button4.TabIndex = 5;
             this.button4.Text = "6";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button12_Click);
             // 
             // button5
             // 
