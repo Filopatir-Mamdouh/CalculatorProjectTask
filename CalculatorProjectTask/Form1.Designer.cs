@@ -123,6 +123,7 @@
             this.button7.TabIndex = 8;
             this.button7.Text = "9";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button12_Click);
             // 
             // button8
             // 
