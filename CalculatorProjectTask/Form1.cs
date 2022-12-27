@@ -19,12 +19,20 @@ namespace CalculatorProjectTask
 
         private void button12_Click(object sender, EventArgs e)
         {
+            Button btn = (Button)sender;
             if (textBox1.Text == "0")
             {
                 textBox1.Clear();
             }
-            Button btn = (Button)sender;
-            textBox1.Text = textBox1.Text + btn.Text;
+            if (btn.Text == ".")
+            {
+                if (!textBox1.Text.Contains("."))
+                {
+                    textBox1.Text = textBox1.Text + btn.Text;
+                }
+            }
+            else
+                textBox1.Text = textBox1.Text + btn.Text;
             
         }
     }
