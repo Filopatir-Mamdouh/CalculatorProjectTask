@@ -11,6 +11,34 @@ namespace CalculatorProjectTask
         {
             InitializeComponent();
         }
+        private void equalfn()
+        {
+            switch (op)
+            {
+                case "+":
+                    rst = rst + double.Parse(textBox1.Text);
+                    textBox1.Text = rst.ToString();
+                    op = "";
+                    break;
+                case "-":
+                    rst = rst - double.Parse(textBox1.Text);
+                    textBox1.Text = rst.ToString();
+                    op = "";
+                    break;
+                case "÷":
+                    rst = rst / double.Parse(textBox1.Text);
+                    textBox1.Text = rst.ToString();
+                    op = "";
+                    break;
+                case "×":
+                    rst = rst * double.Parse(textBox1.Text);
+                    textBox1.Text = rst.ToString();
+                    op = "";
+                    break;
+                default:
+                    break;
+            }
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -25,7 +53,7 @@ namespace CalculatorProjectTask
         private void button12_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            if (textBox1.Text == "0" || isop > 0)
+            if (textBox1.Text == "0" || (isop > 0 && rst != 0))
             {
                 textBox1.Clear();
             }
@@ -45,35 +73,23 @@ namespace CalculatorProjectTask
         private void button13_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            op = btn.Text;
-            rst = double.Parse(btn.Text);
-            isop += 1;
+            if (isop > 0 || rst == 0)
+            {
+                op = btn.Text;
+                rst = double.Parse(textBox1.Text);
+                isop += 1;
+            }
+            else
+            {   equalfn();
+                op = btn.Text;
+                rst = double.Parse(textBox1.Text);
+                isop += 1;
+            }
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            switch (op)
-            {
-                case "+":
-                    rst = rst + double.Parse(textBox1.Text);
-                    textBox1.Text = rst.ToString(); 
-                    break;
-                case "-":
-                    rst = rst - double.Parse(textBox1.Text);
-                    textBox1.Text = rst.ToString();
-                    break;
-                case "÷":
-                    rst = rst / double.Parse(textBox1.Text);
-                    textBox1.Text = rst.ToString();
-                    break;
-                case "×":
-                    rst = rst * double.Parse(textBox1.Text);
-                    textBox1.Text = rst.ToString();
-                    break;
-                default:
-                    textBox1.Text = "0";
-                    break;
-            }
+            equalfn();   
         }
     }
 }
