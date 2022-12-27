@@ -5,7 +5,7 @@ namespace CalculatorProjectTask
 
         string op="";
         double rst = 0;
-        bool isop = false;
+        int isop = 0;
 
         public Form1()
         {
@@ -25,7 +25,7 @@ namespace CalculatorProjectTask
         private void button12_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            if (textBox1.Text == "0" || isop)
+            if (textBox1.Text == "0" || isop > 0)
             {
                 textBox1.Clear();
             }
@@ -38,7 +38,7 @@ namespace CalculatorProjectTask
             }
             else
                 textBox1.Text = textBox1.Text + btn.Text;
-            isop = false;
+            isop = 0;
             
         }
 
@@ -47,7 +47,30 @@ namespace CalculatorProjectTask
             Button btn = (Button)sender;
             op = btn.Text;
             rst = double.Parse(btn.Text);
-            isop = true;
+            isop += 1;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            switch (op)
+            {
+                case "+":
+                    rst = rst + double.Parse(textBox1.Text);
+                    textBox1.Text = rst.ToString(); 
+                    break;
+                case "-":
+                    rst = rst - double.Parse(textBox1.Text);
+                    textBox1.Text = rst.ToString();
+                    break;
+                case "÷":
+                    rst = rst / double.Parse(textBox1.Text);
+                    textBox1.Text = rst.ToString();
+                    break;
+                case "×":
+                    rst = rst * double.Parse(textBox1.Text);
+                    textBox1.Text = rst.ToString();
+                    break;
+            }
         }
     }
 }
