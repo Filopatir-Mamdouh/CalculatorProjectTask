@@ -2,6 +2,10 @@ namespace CalculatorProjectTask
 {
     public partial class Form1 : Form
     {
+        string op="";
+        double rst = 0;
+        bool isop = false;
+
         public Form1()
         {
             InitializeComponent();
