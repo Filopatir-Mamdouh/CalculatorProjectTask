@@ -2,6 +2,7 @@ namespace CalculatorProjectTask
 {
     public partial class Form1 : Form
     {
+
         string op="";
         double rst = 0;
         bool isop = false;
@@ -24,7 +25,7 @@ namespace CalculatorProjectTask
         private void button12_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            if (textBox1.Text == "0")
+            if (textBox1.Text == "0" || isop)
             {
                 textBox1.Clear();
             }
@@ -37,7 +38,16 @@ namespace CalculatorProjectTask
             }
             else
                 textBox1.Text = textBox1.Text + btn.Text;
+            isop = false;
             
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            op = btn.Text;
+            rst = double.Parse(btn.Text);
+            isop = true;
         }
     }
 }
