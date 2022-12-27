@@ -234,6 +234,7 @@
             this.button17.TabIndex = 15;
             this.button17.Text = "ce";
             this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // textBox1
             // 

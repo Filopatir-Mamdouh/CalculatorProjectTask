@@ -99,5 +99,10 @@ namespace CalculatorProjectTask
             int isop = 0;
             textBox1.Text = "0";
         }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "0";
+        }
     }
 }
