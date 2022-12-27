@@ -157,6 +157,7 @@
             this.button12.TabIndex = 9;
             this.button12.Text = "0";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button13
             // 
@@ -225,9 +226,12 @@
             this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.MaxLength = 24;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textBox1.Size = new System.Drawing.Size(339, 34);
             this.textBox1.TabIndex = 18;
+            this.textBox1.Text = "0";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Form1
             // 

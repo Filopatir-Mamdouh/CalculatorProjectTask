@@ -11,5 +11,16 @@ namespace CalculatorProjectTask
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            textBox1.Text = textBox1.Text + btn.Text;
+        }
     }
 }
